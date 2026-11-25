@@ -1,0 +1,17 @@
+[package]
+name = "aether-ffi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Native Android JNI & iOS FFI bindings for AETHER Core (Phase 1)"
+
+[lib]
+name = "aether_ffi"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+aether-core = { path = "../aether-core" }
+rand_core = { version = "0.6", features = ["getrandom"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21"

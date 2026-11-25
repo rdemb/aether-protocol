@@ -1,0 +1,23 @@
+[package]
+name = "aether-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Reference implementation of the AETHER zero-infrastructure protocol (RFC-0001 & RFC-0002)"
+
+[dependencies]
+blake3 = "1.5"
+chacha20poly1305 = { version = "0.10", features = ["std"] }
+x25519-dalek = { version = "2.0", features = ["static_secrets", "zeroize"] }
+ed25519-dalek = { version = "2.1", features = ["zeroize", "rand_core"] }
+ml-kem = "0.2.1"
+hkdf = "0.12"
+sha2 = "0.10"
+raptorq = "1.8"
+rand_core = { version = "0.6", features = ["getrandom"] }
+subtle = "2.6"
+zeroize = { version = "1.8", features = ["derive"] }
+thiserror = "2.0"
+
+[dev-dependencies]
+rand = "0.8"
